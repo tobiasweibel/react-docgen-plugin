@@ -1,5 +1,6 @@
 const path = require('path');
 const process = require('process');
+const eol = require('eol');
 const reactDocgen = require('react-docgen');
 const ReactDocGenMarkdownRenderer = require('react-docgen-markdown-renderer');
 
@@ -83,7 +84,7 @@ ReactDocGenPlugin.prototype.apply = function (compiler) {
           const assetName = path.join(self.options.outputPath, loaded[file].componentName + renderer.extension);
 
           // Render the documentation for the current component
-          const componentDocumentation = renderer.render(file, loaded[file], composesASTs);
+          const componentDocumentation = eol.auto(renderer.render(file, loaded[file], composesASTs));
 
           // Add the documentation file to the compilation assets
           compilation.assets[assetName] = getDocumentationAsset(componentDocumentation);
