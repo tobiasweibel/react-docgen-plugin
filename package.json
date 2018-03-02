@@ -20,6 +20,7 @@
   "author": "Ori Riner",
   "license": "ISC",
   "dependencies": {
+    "eol": "^0.9.1",
     "handlebars": "4.0.6",
     "react-docgen": "2.14.0",
     "react-docgen-markdown-renderer": "1.0.1"
